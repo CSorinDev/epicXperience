@@ -1,0 +1,73 @@
+---
+const navMenu = [
+    { name: "Inicio", path: "/" },
+    { name: "Eventos", path: "/eventos" },
+    { name: "Shop", path: "/shop" },
+    { name: "Contacto", path: "/contacto" },
+];
+---
+
+<header class="fixed top-0 left-0 w-full justify-between flex p-4">
+    <h1 class="text-xl italic z-20">epicXperience</h1>
+    <button id="hbBtn" class="size-9 p-1 z-20">
+        <div
+            class="bg-white w-full transition-all h-1 rounded-3xl relative -top-1"
+        >
+        </div>
+        <div class="bg-white w-full transition-all h-1 rounded-3xl relative">
+        </div>
+        <div
+            class="bg-white w-full transition-all h-1 rounded-3xl relative top-1"
+        >
+        </div>
+    </button>
+    <nav
+        id="navMenu"
+        class="fixed top-0 right-0 w-0 h-svh bg-gradient-to-br from-blue-700 to-purple-500 grid items-center justify-center overflow-hidden transition-all z-10"
+    >
+        <ul class="flex flex-col gap-4">
+            {
+                navMenu.map(({ name, path }) => {
+                    return (
+                        <li>
+                            <a class="py-2 px-4" href={path}>{name}</a>
+                        </li>
+                    );
+                })
+            }
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const hbBtn = document.querySelector("#hbBtn");
+    const bars = document.querySelectorAll("#hbBtn > div");
+    const navMenu = document.querySelector("#navMenu");
+
+    hbBtn?.addEventListener("click", () => {
+        toggleHbBtn();
+        toggleNav();
+    });
+
+    function toggleHbBtn() {
+        bars[0].classList.toggle("rotate-45");
+        bars[0].classList.toggle("top-1");
+        bars[0].classList.toggle("-top-1");
+        bars[0].classList.toggle("bg-red-500");
+        bars[0].classList.toggle("bg-white");
+
+        bars[1].classList.toggle("opacity-0");
+
+        bars[2].classList.toggle("-rotate-45");
+        bars[2].classList.toggle("top-1");
+        bars[2].classList.toggle("-top-1");
+        bars[2].classList.toggle("bg-red-500");
+        bars[2].classList.toggle("bg-white");
+    }
+
+    function toggleNav() {
+        navMenu?.classList.toggle("w-full");
+        navMenu?.classList.toggle("w-0");
+        navMenu?.classList.toggle("p-4");
+    }
+</script>

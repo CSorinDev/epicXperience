@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+const eventos = [
+    {
+        name: "Evento 1",
+        date: "2023-10-01",
+        description: "",
+        price: 35,
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/32/Wikipedia_space_ibiza%2803%29.jpg",
+    },
+    {
+        name: "Evento 2",
+        date: "2023-10-02",
+        description: "",
+        price: 35,
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/32/Wikipedia_space_ibiza%2803%29.jpg",
+    },
+    {
+        name: "Evento 1",
+        date: "2023-10-01",
+        description: "",
+        price: 35,
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/32/Wikipedia_space_ibiza%2803%29.jpg",
+    },
+];
+---
+
+<Layout>
+    <section class="flex gap-4 flex-wrap justify-center">
+        {
+            eventos.map(({ name, date, description, price, image }) => {
+                return (
+                    <article class="w-80 border rounded-xl shadow-lg p-4 ">
+                        <img
+                            class="rounded-lg drop-shadow-2xl -z-10"
+                            src={image}
+                            alt={name}
+                        />
+                        <h2 class="text-xl">{name}</h2>
+                        <p>{date}</p>
+                        <p>{description}</p>
+                        <div class="flex justify-between">
+                            <p>{price.toFixed(2).replace(".", ",")} €</p>
+                            <button class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 cursor-pointer">
+                                Comprar Entradas
+                            </button>
+                        </div>
+                    </article>
+                );
+            })
+        }
+    </section>
+</Layout>
