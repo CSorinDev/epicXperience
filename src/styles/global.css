@@ -4,7 +4,20 @@ section {
     padding: 1rem;
 }
 
-button {
+button:not(#hbBtn) {
+    background: oklch(54.6% 0.245 262.881);
     cursor: pointer;
     user-select: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover:not(#hbBtn) {
+    background: oklch(62.3% 0.214 259.815);
+}
+
+h1 {
+    margin-bottom: 1rem;
 }

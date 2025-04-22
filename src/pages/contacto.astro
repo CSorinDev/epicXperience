@@ -3,5 +3,43 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    contacto
+    <section>
+        <h1 class="text-3xl text-center">Contacto</h1>
+        <p class="text-center">
+            Si tienes alguna pregunta o comentario, no dudes en ponerte en
+            contacto con nosotros. Estaremos encantados de ayudarte.
+        </p>
+    </section>
+    <section>
+        <form class="grid justify-center">
+            Nombre:
+            <label>
+                <input type="text" name="nombre" required />
+            </label>
+            Email:
+            <label>
+                <input type="email" name="email" required />
+            </label>
+            Mensaje:
+            <label>
+                <textarea name="mensaje" required></textarea>
+            </label>
+            <button> Enviar </button>
+        </form>
+    </section>
 </Layout>
+
+<style>
+    input,
+    textarea {
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    label {
+        min-width: 350px;
+    }
+</style>

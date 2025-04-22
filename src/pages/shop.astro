@@ -1,9 +1,53 @@
 ---
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+const products = [
+    {
+        name: "Camiseta Blanca",
+        description:
+            "Camiseta blanca infantil de Stanley/Stella, modelo Mini Creator. Composición: 100% algodón orgánico. Tallas disponibles: 2-3 años, 4-5 años, 6-7 años, 8-9 años.",
+        price: 6.5,
+        image:
+            "https://www.markamania.es/5579-large_default/camiseta-blanca-infantil-stanleystella-mini-creator.jpg",
+    },
+    {
+        name: "Camiseta Blanca",
+        description:
+            "Camiseta blanca infantil de Stanley/Stella, modelo Mini Creator. Composición: 100% algodón orgánico. Tallas disponibles: 2-3 años, 4-5 años, 6-7 años, 8-9 años.",
+        price: 6.5,
+        image:
+            "https://www.markamania.es/5579-large_default/camiseta-blanca-infantil-stanleystella-mini-creator.jpg",
+    },
+    {
+        name: "Camiseta Blanca",
+        description:
+            "Camiseta blanca infantil de Stanley/Stella, modelo Mini Creator. Composición: 100% algodón orgánico. Tallas disponibles: 2-3 años, 4-5 años, 6-7 años, 8-9 años.",
+        price: 6.5,
+        image:
+            "https://www.markamania.es/5579-large_default/camiseta-blanca-infantil-stanleystella-mini-creator.jpg",
+    },
+    {
+        name: "Camiseta Blanca",
+        description:
+            "Camiseta blanca infantil de Stanley/Stella, modelo Mini Creator. Composición: 100% algodón orgánico. Tallas disponibles: 2-3 años, 4-5 años, 6-7 años, 8-9 años.",
+        price: 6.5,
+        image:
+            "https://www.markamania.es/5579-large_default/camiseta-blanca-infantil-stanleystella-mini-creator.jpg",
+    },
+];
 ---
 
 <Layout>
-    <section>
-        shop
+    <section class="flex gap-4 flex-wrap justify-around">   
+        {products.map(({ name, description, price, image }) => {
+            return (
+                <Card
+                    name={name}
+                    description={description}
+                    price={price}
+                    image={image}
+                />
+            )
+        })}
     </section>
 </Layout>
